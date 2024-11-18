@@ -1,0 +1,54 @@
+Compilation and Execution
+
+4.1. Compilation
+
+The project uses a Makefile to compile all the source files into an executable.
+
+To compile the project, navigate to the root directory and run the command:
+
+make
+./bin/mpls_simulation
+
+This will generate an executable named mpls_simulation in the bin/ directory.
+
+4.2. Running the Simulation
+
+To run the compiled program, use the following command:
+
+./bin/mpls_simulation
+
+The main.cpp file in the src/ directory sets up an example MPLS network, creates label-switched paths, and simulates packet forwarding.
+
+5. Example Usage
+
+The main.cpp file provides an example simulation involving three nodes (1, 2, 3) connected as follows:
+
+Nodes 1 and 2 are linked with a cost of 5.
+
+Nodes 2 and 3 are linked with a cost of 10.
+
+A label-switched path is created between Node 1 and Node 3.
+
+A packet with the data "Hello, MPLS World!" is sent from Node 1 to Node 3.
+
+6. How MPLS Concepts Are Simulated
+
+Label-Switched Paths (LSPs): In the project, LSPs are represented using the addLabelSwitchedPath method of the NetworkNode class. Labels are generated and associated with a destination.
+
+Packet Forwarding: The simulatePacketFlow method in the MPLSNetwork class forwards packets from the source node to the destination using the labels assigned.
+
+Efficiency: By using labels instead of full routing information, the simulation demonstrates how MPLS can reduce the complexity of routing decisions and improve efficiency.
+
+7. Future Improvements
+
+Dynamic Routing Protocol: Implement a dynamic routing protocol such as OSPF to dynamically determine the best paths between nodes.
+
+Packet Loss and Retransmission: Simulate scenarios involving packet loss and implement mechanisms for retransmission.
+
+User Interface: Develop a simple GUI or command-line interface to allow users to add nodes, links, and simulate packet flows interactively.
+
+8. Conclusion
+
+The MPLS Network Routing Simulation project provides a basic yet insightful view into how MPLS-based networks operate. It uses fundamental networking concepts such as label-switched paths, routing tables, and packet forwarding to simulate the working of an MPLS network in a simplified environment.
+
+The goal of this project is to provide a hands-on demonstration of network protocol development concepts, which can be extended further to include more advanced features and functionalities typical in modern networking systems.
